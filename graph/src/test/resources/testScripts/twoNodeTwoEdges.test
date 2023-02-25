@@ -1,0 +1,19 @@
+# Test add two edges in the same direction between two nodes file
+# Tests that a graph can be created
+# two nodes can be added to the graph
+# two edges can be added in the same direction between 2 nodes
+
+# Create a graph
+CreateGraph graph1
+
+# Add two nodes
+AddNode graph1 n1
+AddNode graph1 n2
+
+# Add two edges in the same direction
+AddEdge graph1 n1 n2 e1
+AddEdge graph1 n1 n2 e2
+
+# Print the nodes in the graph and the outgoing edges from n1
+ListNodes graph1
+ListChildren graph1 n1

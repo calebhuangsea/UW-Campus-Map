@@ -1,0 +1,11 @@
+# test a cyclic graph
+
+CreateGraph g
+
+AddNode g n1
+AddNode g n2
+
+AddEdge g n1 n2 e1
+AddEdge g n2 n1 e2
+
+FindPath g n1 n2

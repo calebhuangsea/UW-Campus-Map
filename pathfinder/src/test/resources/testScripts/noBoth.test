@@ -1,0 +1,5 @@
+# test no both parent and child nodes
+
+CreateGraph graph1
+
+FindPath graph1 n1 n3

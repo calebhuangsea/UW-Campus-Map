@@ -1,0 +1,6 @@
+# Find a path with where there exist 2 paths
+# between start node and end node with different distance
+
+LoadGraph shortestPath shortestPath.csv
+
+FindPath shortestPath n1 n3

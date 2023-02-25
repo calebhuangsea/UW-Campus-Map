@@ -1,0 +1,7 @@
+# Find a path with where there only exist 1 path between start node and end node
+
+loaded graph onePath
+
+path from n1 to n3:
+n1 to n2 via edge1
+n2 to n3 via edge2

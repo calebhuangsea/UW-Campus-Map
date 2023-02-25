@@ -1,0 +1,38 @@
+# Test two graphs create file
+# Tests that two graph can be created
+# 2 nodes can be added to the graph1
+# 3 nodes can be added to the graph2
+# 1 edge can be added to 2 nodes in graph1
+# 2 edges can be added to 3 nodes in graph2
+# none of these two graphs behave incorrectly
+
+# Create a graph1
+CreateGraph graph1
+
+# Add two nodes to graph1
+AddNode graph1 n1
+AddNode graph1 n2
+
+# Add an edge to graph1
+AddEdge graph1 n1 n2 e1
+
+# Print the node in the graph1 and the outgoing edge from n1
+ListNodes graph1
+ListChildren graph1 n1
+
+# Create a graph2
+CreateGraph graph2
+
+# Add three nodes to graph2
+AddNode graph2 n1
+AddNode graph2 n2
+AddNode graph2 n3
+
+# Add two edges to graph2
+AddEdge graph2 n1 n2 e1
+AddEdge graph2 n2 n3 e2
+
+# Print the node in the graph2 and the outgoing edges from n1, n2
+ListNodes graph2
+ListChildren graph2 n1
+ListChildren graph2 n2

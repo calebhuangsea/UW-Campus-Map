@@ -1,0 +1,5 @@
+# Find a path where child node doesn't exist
+
+loaded graph noChild
+
+unknown: n2

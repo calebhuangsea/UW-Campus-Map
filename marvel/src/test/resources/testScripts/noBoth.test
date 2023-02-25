@@ -1,0 +1,5 @@
+# Find a path where both child and parent nodes doesn't exist
+
+LoadGraph noBoth noBoth.csv
+
+FindPath noBoth n1 n2

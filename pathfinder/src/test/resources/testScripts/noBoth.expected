@@ -1,0 +1,6 @@
+# test no both parent and child nodes
+
+created graph graph1
+
+unknown: n1
+unknown: n3

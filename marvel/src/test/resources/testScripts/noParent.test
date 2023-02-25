@@ -1,0 +1,5 @@
+# Find a path where parent node doesn't exist
+
+LoadGraph noParent noParent.csv
+
+FindPath noParent n2 n1

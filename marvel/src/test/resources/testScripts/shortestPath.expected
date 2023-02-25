@@ -1,0 +1,7 @@
+# Find a path with where there exist 2 paths
+# between start node and end node with different distance
+
+loaded graph shortestPath
+
+path from n1 to n3:
+n1 to n3 via a3

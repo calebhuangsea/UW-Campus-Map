@@ -1,0 +1,15 @@
+# test a graph has two equal weight path
+
+CreateGraph graph1
+
+AddNode graph1 n1
+AddNode graph1 n2
+AddNode graph1 n3
+AddNode graph1 n4
+
+AddEdge graph1 n1 n2 1.000
+AddEdge graph1 n1 n3 2.000
+AddEdge graph1 n2 n4 2.000
+AddEdge graph1 n3 n4 1.000
+
+FindPath graph1 n1 n4

@@ -1,0 +1,15 @@
+# Test contain order in three nodes file
+# Tests that a graph can be created
+# three nodes can be added to the graph
+# contain order is correct
+
+# Create a graph
+CreateGraph graph1
+
+# Add three nodes
+AddNode graph1 n3
+AddNode graph1 n2
+AddNode graph1 n1
+
+# Print the nodes in the graph
+ListNodes graph1

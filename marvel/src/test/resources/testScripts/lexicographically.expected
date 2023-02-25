@@ -1,0 +1,12 @@
+# test finding Lexicographically least paths.
+
+created graph g
+
+added node n1 to g
+added node n2 to g
+
+added edge e1 from n1 to n2 in g
+added edge a1 from n1 to n2 in g
+
+path from n1 to n2:
+n1 to n2 via a1

@@ -1,0 +1,10 @@
+# test two nodes with only one path
+
+CreateGraph graph1
+
+AddNode graph1 n1
+AddNode graph1 n2
+
+AddEdge graph1 n1 n2 1.1111
+
+FindPath graph1 n1 n2

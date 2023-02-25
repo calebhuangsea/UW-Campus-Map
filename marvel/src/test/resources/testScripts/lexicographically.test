@@ -1,0 +1,11 @@
+# test finding Lexicographically least paths.
+
+CreateGraph g
+
+AddNode g n1
+AddNode g n2
+
+AddEdge g n1 n2 e1
+AddEdge g n1 n2 a1
+
+FindPath g n1 n2

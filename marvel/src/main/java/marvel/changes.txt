@@ -1,0 +1,12 @@
+Briefly list any changes you made to your graph class during hw-marvel, and why you made those changes.
+
+1. Graph - addNode, if given parent/child node doesn't exist, then create it instead of returning false.
+    Because I add each node and its edge in MarvelPath using iteration, if only one node exists, it will
+    keep throwing exceptions.
+
+2. Edge - hashCode, equals, change from only compare two edge's label to parent/child and label.
+    Using this allows a node to not only have unique outgoing edges but further unique edges between two nodes.
+
+3. Graph - findChildren, return a List contains Edge instead of Map<String, Set<String>>, Because Edge class
+    is immutable, it is okay to return them, and better to return String if client need to print messages,
+    so better to return Edge here.

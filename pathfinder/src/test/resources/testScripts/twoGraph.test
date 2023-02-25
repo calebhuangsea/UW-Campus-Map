@@ -1,0 +1,24 @@
+# test loading two graph
+
+CreateGraph graph1
+
+AddNode graph1 n1
+AddNode graph1 n2
+AddNode graph1 n3
+
+AddEdge graph1 n1 n2 1.000
+AddEdge graph1 n2 n3 1.000
+AddEdge graph1 n1 n2 2.000
+AddEdge graph1 n2 n3 2.000
+
+FindPath graph1 n1 n3
+
+CreateGraph graph2
+
+AddNode graph2 n1
+AddNode graph2 n2
+AddNode graph2 n3
+
+AddEdge graph2 n1 n2 1.000
+
+FindPath graph2 n1 n3

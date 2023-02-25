@@ -1,0 +1,28 @@
+# Test having self edge and cycle edge in one graph connected
+# Test that a graph can be created
+# 4 nodes can be added
+# a cycle graph can be formed
+# a self edge can be formed
+
+# Create a graph
+CreateGraph graph1
+
+# Add four nodes
+AddNode graph1 n4
+AddNode graph1 n3
+AddNode graph1 n2
+AddNode graph1 n1
+
+# Add cycle edge
+AddEdge graph1 n1 n1 e1
+AddEdge graph1 n2 n3 e2
+AddEdge graph1 n3 n4 e3
+AddEdge graph1 n4 n2 e4
+AddEdge graph1 n1 n2 e5
+
+# Print the node in the graph and the outgoing edges from n1 n2 n3 n4
+ListNodes graph1
+ListChildren graph1 n1
+ListChildren graph1 n2
+ListChildren graph1 n3
+ListChildren graph1 n4

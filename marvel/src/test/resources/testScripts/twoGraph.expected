@@ -1,0 +1,11 @@
+# test behavior when loading two graphs
+
+loaded graph onePath
+
+path from n1 to n3:
+n1 to n2 via edge1
+n2 to n3 via edge2
+
+loaded graph noParent
+
+unknown: n2

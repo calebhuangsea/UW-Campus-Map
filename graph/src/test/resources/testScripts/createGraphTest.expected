@@ -1,0 +1,9 @@
+# createGraph testing file
+# test that a graph can be created
+# test ListNodes method for empty graph
+
+# create a graph
+created graph graph1
+
+# print nodes in the graph
+graph1 contains:

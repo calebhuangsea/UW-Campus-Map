@@ -1,0 +1,117 @@
+## CSE 331 hw-graph Part 2 Questions
+
+NOTE: This file is used as part of hw-graph-part2, and is not due as part of the hw-graph-part1
+submission. You may leave it blank for hw-graph-part1.
+
+## Part 1
+###########################################################################
+
+A few examples of possible Graph representations:
+
+    A: A collection of nodes and a collection of edges.
+    B: An adjacency list, in which each node is associated with a list of its outgoing edges.
+    C: An adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of nodes, whether there 
+       is a link from A to B, and how many.
+
+1. In two or three sentences, explain an advantage and a disadvantage of each of the
+representations listed above (for example, in terms of runtime complexity, space
+complexity, or ease of implementation).
+
+A. Two collections for nodes and edges
+ADV: It is easy to implement
+DIS: Runtime efficiency is bad, we need to match two collections every time we do edge/node operation.
+        Take more storage than adjacency matrix because it needs to store every node and edge.
+
+B. An adjacency list
+ADV: It is easier to implement than adjacency matrix, it is easy to find outgoing edges for a node with
+        a better efficiency.
+DIS: Finding adjacency list is not quicker than matrix because it needs to explore every node
+        Take more storage than adjacency matrix because it needs to store every node and edge.
+
+C. An adjacency matrix
+ADV: Operations like adding/removing edges or check if an edge exists between two nodes is extremely
+        efficient. Less storage than the other two implementations.
+DIS: It is hard to implement especially towards directed graph where two nodes can have multiple edges
+        It is difficult to determine outgoing/incoming edges.
+
+2. In two to three sentences, describe the representation you chose and explain why you
+chose it. If you chose to use a different representation than one of the three we described
+above, be sure to list its advantages and disadvantages, too.
+
+I use HashMap to implement an adjacency list with key is node and value is list containing outgoing edges
+
+ADV: It is easier to implement than adjacency matrix, it is easy to find outgoing edges for a node with
+        a better efficiency.
+DIS: Finding adjacency list is not quicker than matrix because it needs to explore every node
+        Take more storage than adjacency matrix because it needs to store every node and edge
+
+
+
+## Part 4
+###########################################################################
+
+    (Please keep your answers brief and to-the-point.)
+
+1. Describe any new tests you added and why you added them, or why you feel that your original
+tests alone are sufficient.
+
+JUnit:
+1. testDuplicateNode, testDuplicateEdge, testAddEdgeParentNotExist, testAddEdgeChildNotExist
+    I change these tests from testing exceptions to test return boolean. Because I change my
+    methods in Graph class to return boolean instead of throwing exceptions for these cases.
+
+ScriptTest:
+1. islandTest: test a self edge and cycle edge connect to each other in one graph
+
+
+
+2. Did you make any changes to your specifications as you were implementing your Graph? (yes/no)
+If yes, describe your changes and why you made them.
+
+YES
+
+1. Class specification
+    FROM: each edge between two nodes also has distinct label
+    TO:   every outgoing node for one node has distinct label
+    REASON: I realize that my implementation doesn't satisfy original specification, it would be
+                lot easier to change the specification.
+
+2. findChildren method
+    FROM: @return a Map with key=childNode, value=list of outgoing edges
+    TO:   @return a Map with key=childNode, value=set of outgoing edges
+    REASON: After choosing implementation using adjacency list, using map with string as key and
+            Set as value can save me code to check invariant. So I change return value in map from
+            list to set.
+
+3. addNode method
+    FROM: add a node to our graph
+    TO:   add a node to our graph if no other node exist
+    REASON: Better description
+
+    FROM: @throws IllegalArgumentException if given node label already exists in our graph
+    TO:   @return true if added node, false otherwise
+    REASON: Instead of throwing an exception if node label already exist in our graph
+            I choose not to add it and return false. True if added successfully
+
+
+4. addEdge method
+    FROM: add a new edge between two node
+    TO:   add a new edge between two node if two node exists and no same outgoing edge in parent node exist
+    REASON: Better description
+
+    FROM: @throws IllegalArgumentException if given edge label already exists between these two nodes
+               *                          or parent/child node doesn't exist
+    TO:   @return true if added edge, false otherwise
+    REASON: Instead of throwing an exception if edge label already exist in a node's outgoing edge set
+            I choose not to add it and return false. False also when parent/child node don't exist.
+            True if added successfully.
+
+5. HashCode and Equals methods in Edge class
+   New
+   REASON override to compare edges.
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+Briefly list any changes you made to your graph class during hw-pathfinder, and why you made those changes.
+1. I change Edge class from static to non static so that my Edge class can directly use Outer class
+    Graph's generics type. I also change all methods in graph and edge according to the change of usage of generics,
+    no big change is made in Graph class.

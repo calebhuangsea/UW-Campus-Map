@@ -1,0 +1,6 @@
+# test find path in an empty graph
+
+created graph g
+
+unknown: A
+unknown: B

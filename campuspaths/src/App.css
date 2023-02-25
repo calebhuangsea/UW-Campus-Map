@@ -1,0 +1,158 @@
+/*
+ * Copyright (C) 2022 Hal Perkins.  All rights reserved.  Permission is
+ * hereby granted to students registered for University of Washington
+ * CSE 331 for use solely during Spring Quarter 2021 for purposes of
+ * the course.  No other use, copying, distribution, or modification
+ * is permitted without prior written consent. Copyrights for
+ * third-party components of this work must be honored.  Instructors
+ * interested in reusing these course materials should contact the
+ * author.
+ */
+
+/*
+CSS file used by the Application
+
+It provides placement and style information for the components in the app
+and only exists for aesthetic purposes. The app would work just fine if this
+file was empty.
+*/
+
+body {
+    background-image: url("/src/img/bgimg.jpg");
+    background-attachment: fixed;
+    margin: 0;
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+#startName, #endName, #currName {
+    align-content: center;
+    width: auto;
+    height: 50px;
+    text-align: center;
+}
+
+#title {
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    background-color: aliceblue;
+    border-style: groove;
+    border-width: 10px;
+}
+
+h1 {
+    text-shadow: 10px 5px 10px white;
+    color: #551755;
+}
+
+/* Create some space around text boxes so the label text isn't scrunched up next to it. */
+input {
+    margin: 5px;
+}
+
+/*!* Centers component with ID "map-wrapper" and sets width and bottom spacing *!*/
+/*#map {*/
+/*    margin: 0px;*/
+/*    width: 1000px;*/
+/*}*/
+
+/* Sets size of map, which has class name "leaflet-container" */
+.leaflet-container {
+    width: 1000px;
+    height: 600px;
+    margin-top: 10%;
+    border-color: #551755;
+    border-style: groove;
+    border-width: 20px;
+    border-radius: 3%;
+}
+
+/* Same as above, but with ID "edge-list", and also creates a little margin so things aren't squished together. */
+#select-list, #errorMsg {
+    text-align: center;
+    margin: 5px;
+}
+
+#selectBox {
+    margin-top: 10px;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 20px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+}
+
+#errorMsg {
+    color: red;
+}
+
+/* This syntax means "any <button> elements inside something with ID "edge-list"" - the 2px is for above and
+ below the button, the 5px is the left and right sides. This prevents the draw and clear buttons from being
+ squished right next to each other. */
+#select-list button {
+    margin: 2px 5px;
+}
+
+select {
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    appearance: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,.2);
+    color: inherit;
+    padding: 5px 15px;
+    font-size: inherit;
+}
+
+option {
+    color: gray;
+}
+
+button {
+    border: 1px solid rgba(255,255,255,.2);
+    background-color: rgba(85,23,85,.5);
+    color: inherit;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: inherit;
+}
+
+/* Centers the "Line Mapper!" text, which is in a <p> (paragraph) tag inside the <App /> component, and has an
+ID of "app-title". Also makes the text bigger, bold, and adds some space around the title. */
+#app-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+#mapBox, #selectBox {
+    display: inline-block;
+}
+
+#selectBox {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    width: 26%;
+}
+
+div {
+    margin: 0px;
+}
+
+#selectBox {
+    align-content: center;
+}
+
+p {
+    font-size: 15px;
+}

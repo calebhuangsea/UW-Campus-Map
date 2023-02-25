@@ -1,0 +1,121 @@
+## CSE 331 hw-graph Part 1 Questions
+
+## Part 1
+###########################################################################
+
+a. Write an AF and RI for IntQueue1 and IntQueue2.
+
+    ### IntQueue1
+
+    Abstraction Function:
+    An IntQueue1, q, represents a queue consists of only Integers with first-in, first-out principle
+    Our queue looks like this [n_1, n_2...n_k] with n_k points to the most recently added integer
+    and n_1 points to the least recently added integer
+    If no integer is in the queue, the queue is empty
+
+
+    Representation Invariant:
+    entries != null && !entries.contains(null)
+
+
+
+
+    ### IntQueue2
+
+    Abstraction Function:
+    An IntQueue2, q, represents a queue consists of only Integers with first-in, first-out principle
+    Our queue looks like this
+    AF(this) = [...,
+        entries[(i + front) % entries.length],
+        ...]
+        for front <= i < size
+
+    For a given IntQueue2 q, "pointer to the first integer in q" is synonymous with q.front,
+        "total numbers of integers in q" is synonymous with q.size,
+        and "IntQueue" is synonymous with q.entries.
+    Our q initializes with capacity q.INITIAL_SIZE, whenever we enqueue an integer to q,
+    q.size will increase, if our queue is running out of space, we will enlarge it.
+
+
+    Representation Invariant:
+    entries != null
+       && 0 <= front < entries.length
+       && 0 <= size <= entries.length
+
+
+
+
+b. Group the snapshots of IntQueue2's internal state into groups that have the same abstract state.
+[1, 2]: a, d, g
+[2, 3, 4]: b, h
+[1, 2, 3]: c, f
+[1, 2, 3, 4]: e
+
+
+
+c. For each signature below, state and justify in 1-2 sentences (per part) whether the method or constructor
+could possibly expose the representation, given the information available. Explain any assumptions you made.
+
+    1. `public int solveEquations(int x, int y, int z)`
+        It is not possible to have rep exposure for returning Integer. Because Integer is immutable.
+
+
+    2. `public String[] decode(boolean slowly)`
+        It is possible to have rep exposure, because if we return the array in our field, our client can change
+        contents inside our array.
+
+
+
+    3. `private Date myBirthday()`
+        It is not possible to have rep exposure, because this method is private, there is no way client can call
+        this method.
+
+
+    4. `public String toString()`
+        It is not possible to have rep exposure for returning String. Because String is immutable.
+
+
+    5. `public Iterator<Integer> elements()`
+        It is possible to have rep exposure, if we don't use Collections.unmodifiableSet(contents).iterator() to return,
+        then there might be rep exposure.
+
+
+
+    6. `public Deck(List<Card> cards)`
+         A list is mutable, and that if cards is stored in our representation the client could modify cards after initialization.
+
+
+
+## Part 2
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+I have two classes: Graph, Edge
+Graph:
+I have allNodes, addNode, addEdge, findChildren
+Simply for a graph, you can add location(node), add path(edge), we can also find every
+location(node) in our graph, also have find children(with different path),
+there operations include finding important information in a graph and adding node and path.
+
+I have inner public static Edge class. Because Edge needs parent node and child node and label when
+Node only needs label, so I don't need a class for Node, but I do need a class for edge
+
+
+## Part 3
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+My testing strategy is to test using 0-1-many cases for suitable methods and also test empty size
+cases, correct order cases and specific properties for my graph(one-direction, node can have edge with itself,
+unique label for nodes and edges).
+
+My script tests include most cases where I assume my Graph will behave correctly when my JUnit tests
+are about exceptions and inner class methods. Because it is hard to check exceptions and special cases
+where Graph might fail, instead JUnit tests are more efficient towards these tests.
+
+

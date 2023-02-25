@@ -1,0 +1,12 @@
+CSE 331 Homework.  Answers to written questions.
+Edit this file to supply your answers.
+
+Name:  <replace this with your name>
+
+Describe any additional functionality you added to your application, or any
+significant changes you made to the starter code beyond the basic requirements
+of the assignment, below:
+
+1. Allow user to type in x, y coordinates in 0-4000 and color to draw points in the map.
+
+

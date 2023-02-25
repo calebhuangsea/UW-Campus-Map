@@ -1,0 +1,9 @@
+# test behavior when loading two graphs
+
+LoadGraph onePath onePath.csv
+
+FindPath onePath n1 n3
+
+LoadGraph noParent noParent.csv
+
+FindPath noParent n2 n1
